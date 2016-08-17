@@ -1,12 +1,11 @@
 #Collect a list of Wikipedia links to all American TV shows
 
 from bs4 import BeautifulSoup as soup
-import pandas as pd
 import re
 from urllib import request
  
 def soupTheLink(url):
-    html = request.urlopen(weblink).read().decode('utf8')
+    html = request.urlopen(url).read().decode('utf8')
     return soup(html, 'lxml')
 
 def collectLinks(url):
