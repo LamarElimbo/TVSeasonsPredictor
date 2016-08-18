@@ -3,6 +3,9 @@
 from bs4 import BeautifulSoup as soup
 import re
 from urllib import request
+import settings
+import pandas as pd
+import os
  
 def soupTheLink(url):
     html = request.urlopen(url).read().decode('utf8')
@@ -22,3 +25,19 @@ def collectLinks(url):
             pass
     showLinks = showLinks[28:2282]
     return showLinks
+
+
+def main():
+    mainUrl = 'https://en.wikipedia.org/wiki/List_of_American_television_series'
+    links = collectLinks(mainUrl)
+    for link in links:
+        settings.WIKI_LINKS['link'].append(link)
+        
+    df = pd.DataFrame(settings.WIKI_LINKS, columns = settings.LINK_COLUMNS)
+    os.chdir('..')
+    os.chdir(settings.DATA_DIR)
+    print(df.head())
+    df.to_csv(settings.LINKS_FILE)
+    
+if __name__ == "__main__":
+    main()
