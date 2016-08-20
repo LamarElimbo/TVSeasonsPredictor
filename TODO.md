@@ -1,0 +1,3 @@
+- apply machine learning techniques to evaluate the predictability of the quantity of seasons per show
+- possibly scrape additional information about tag words for each show
+- write articles
