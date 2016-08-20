@@ -1,11 +1,7 @@
 DATA_DIR = './data'
+LINKS_DIR = './links'
 
 LINK=[]
-LINK_COLUMNS = ['link']
-WIKI_LINKS = {'link':LINK}
-LINKS_FILE = 'wiki_links.csv'
-
-
 TITLE=[]
 GENRE=[]
 CREATED_BY=[]
@@ -15,10 +11,13 @@ RUNNING_TIME=[]
 NUM_SEASONS=[]
 NUM_EPISODES=[]
 
+LINK_COLUMNS = ['link']
 TABLE_COLUMNS = ['title', 'genre', 'created_by', 'starring', 'network', 'running_time', 'num_seasons', 'num_episodes']
 
+WIKI_LINKS = {'link':LINK}
 DATABASE = {'title':TITLE, 'genre':GENRE, 'created_by':CREATED_BY, 'starring':STARRING, 'network':NETWORK, 'running_time':RUNNING_TIME, 'num_seasons':NUM_SEASONS, 'num_episodes':NUM_EPISODES}
 
+LINKS_FILE = 'wiki_links.csv'
 SYM_TABLE_NAME = 'sym_shows.csv' #3
 NUM_TABLE_NAME = 'num_shows.csv' #32
 A_TABLE_NAME = 'a_shows.csv' #149
@@ -47,3 +46,5 @@ W_TABLE_NAME = 'w_shows.csv' #47
 X_TABLE_NAME = 'x_shows.csv' #7
 Y_TABLE_NAME = 'y_shows.csv' #22
 Z_TABLE_NAME = 'z_shows.csv' #12
+
+MASTER_FILE = 'master.csv'

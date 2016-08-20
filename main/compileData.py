@@ -8,7 +8,7 @@ def compileData(listOfShowLinks):
     print("number of shows = ", len(listOfShowLinks))
     count = 0
     print(listOfShowLinks)
-    for url in listOfShowLinks[:]:
+    for url in listOfShowLinks[2237:]:
         count += 1
         print('show number ', count)
         souped = collectLinks.soupTheLink(url[0])
@@ -176,15 +176,17 @@ def compileData(listOfShowLinks):
                     
 def main():
     os.chdir('..')
-    os.chdir(settings.DATA_DIR)
+    os.chdir(settings.LINKS_DIR)
     with open(settings.LINKS_FILE) as wiki_links:
         reader = csv.reader(wiki_links)
         links = list(reader)    
     
     compileData(links)
+    os.chdir('..')
+    os.chdir(settings.DATA_DIR)
     df = pd.DataFrame(settings.DATABASE, columns = settings.TABLE_COLUMNS)
     print(df.head())
-    df.to_csv(settings.A_TABLE_NAME)
+    df.to_csv(settings.Z_TABLE_NAME)
 
 if __name__ == "__main__":
     main()
