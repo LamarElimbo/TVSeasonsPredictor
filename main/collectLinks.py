@@ -1,7 +1,6 @@
 #Collect a list of Wikipedia links to all American TV shows
 
 from bs4 import BeautifulSoup as soup
-import re
 from urllib import request
 import settings
 import pandas as pd

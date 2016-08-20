@@ -1,0 +1,7 @@
+bs4
+re
+urllib
+pandas
+os
+csv
+glob
